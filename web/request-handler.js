@@ -9,7 +9,11 @@ var firstTime = true;
 module.exports.handleRequest = function (req, res) {
   console.log(exports.datadir);
   var parsedURL = url.parse(req.url);
-  console.log(parsedURL.pathname);
-  helpers.serveStaticAssets(res, parsedURL.pathname);
+  switcher[req.method](res, parsedURL.pathname, req);
+};
+
+var switcher = {
+  'GET' : helpers.serveStaticAssets,
+  'POST': helpers.writeAssets
 };
 
