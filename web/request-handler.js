@@ -14,6 +14,6 @@ module.exports.handleRequest = function (req, res) {
 
 var switcher = {
   'GET' : helpers.serveStaticAssets,
-  'POST': helpers.writeAssets
+  'POST': helpers.writeAddress
 };
 

@@ -1,11 +1,17 @@
+var mysql = require('mysql');
 var fs = require('fs');
 var ul = require('url');
 var http = require('http');
 var sql = require('sql');
 
+ exports.connection = mysql.createConnection({
+  host: 'localhost',
+  user: 'root',
+  password: '',
+  database: 'db_html'
+});
+
 exports.readUrls = function(filePath, cb){
-  // var fpath = ul.parse(filePath).pathname;
-  // console.log("HERE")
   fs.readFile(filePath, 'utf-8', function(err, data){
     var results = '';
     results += data;
@@ -68,3 +74,7 @@ exports.fileCheck = function (string){
 
 
 
+
+// insert function
+
+// retrieval functionnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn

@@ -16,19 +16,19 @@ exports.serveStaticAssets = function(res, folder, asset) {
   //(Static files are things like html (yours or ones archived from others...), css, or anything that doesn't change often.)
 };
 
-exports.writeAssets = function(res, folder, asset) {
-  res.writeHead(302, headers);
+exports.writeAddress = function(res, path, asset ) {
+  res.writeHead(201, headers);
   asset.on('data', function(data) {
     var urlinput = '';
     urlinput += data;
     urlinput += "\n";
-     fs.appendFile('./data/sites.txt', urlinput, function(err) {
+     fs.appendFile('../data/sites.txt', urlinput, function(err) {
      });
-    res.end('data received');
+    res.end('[]');
   });
 };
 
-var waiter = function(res, ur) {
+var waiter = function(res, ur) { // fix it later to do actual archival retrieval ; it currently only grabs one copy . Refer to workers/lib. 
   if(ur === '/') {
     res.writeHead(200, headers);
     var output = '';

@@ -1,0 +1,10 @@
+DROP TABLE sites;
+
+CREATE DATABASE IF NOT EXISTS db_html;
+
+USE db_html;
+
+CREATE TABLE sites
+(url VARCHAR(2000),
+date VARCHAR(10),
+filepath VARCHAR(2200));

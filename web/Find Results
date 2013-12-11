@@ -1,0 +1,17 @@
+Searching 16 files for "302"
+
+/Users/hackreactor/code/turingtesties/2013-11-web-historian/spec/ServerSpec.js:
+   50  
+   51        var fileContents = fs.readFileSync(handler.datadir, 'utf8');
+   52:       expect(res._responseCode).toEqual(302);
+   53        expect(fileContents).toEqual(url + "\n");
+   54        expect(res._ended).toEqual(true);
+
+/Users/hackreactor/code/turingtesties/2013-11-web-historian/web/http-helpers.js:
+   18  
+   19  exports.writeAssets = function(res, folder, asset) {
+   20:   res.writeHead(302, headers);
+   21    asset.on('data', function(data) {
+   22      var urlinput = '';
+
+2 matches across 2 files

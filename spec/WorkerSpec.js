@@ -27,8 +27,13 @@ describe("html fetcher helpers", function(){
     });
   });
 
-  xit("should have a 'downloadUrls' function", function(){
-    var result = htmlFetcherHelpers.downloadUrls();
-    expect(result).toBeTruthy();
+  it("should have a 'downloadUrls' function", function(){
+    var urlArray = ["example1.com", "example2.com"];
+
+    var filePath = path.join(__dirname, "/testdata/sites.txt");
+
+    fs.writeFileSync(filePath, urlArray.join("\n"));
+    var result = htmlFetcherHelpers.downloadUrls(filePath);
+    expect().toBeTruthy();
   });
 });
